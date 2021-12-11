@@ -20,7 +20,7 @@ I created an object model class with a manager anmd defined it's attributes.
         # assigns a manager
         destination = models.Manager()
 
-I then created a forms.py file, imported my object model as well as ModelForm from django.forms.
+I then created a model form that will include any inputs the user needs to make.
 
     from django.forms import ModelForm
     from .models import destination
@@ -29,7 +29,26 @@ I then created a forms.py file, imported my object model as well as ModelForm fr
         class Meta:
             model = destination
             fields = '__all__'
+            
+Additionally, I used the following views function to render the create page and utilize the model form to save the item to a database.
+
+    def TravelDestinations_add(request):
+    form = DestinationForm(data=request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('TravelDestinations_add.html')
+    content = {'form': form}
+    return render(request, 'TravelDestinations/TravelDestinations_add.html', content)
+    
+The following function pulls all current database records but only displays the trip name to the HTML template
+
+    def destinations(request):
+    trips = destination.destination.all()
+    content = {'trips': trips}
+    return render(request, 'TravelDestinations/TravelDestinations_destinations.html', content)
    
+
 ## C# Live Project using .NET Framework
 
 
