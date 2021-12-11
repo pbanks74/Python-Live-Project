@@ -9,6 +9,7 @@ To start, I created a new application within the Django framework. I created bas
 
 ### Creating the Model and Form
 I created an object model class with a manager anmd defined it's attributes. 
+
     class destination(models.Model):
         TripName = models.CharField(max_length=30, default="", blank=False, null=False)
         City = models.CharField(max_length=20, default="", blank=False, null=False)
