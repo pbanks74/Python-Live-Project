@@ -8,7 +8,7 @@ After completing the Python course, I participated in a two week sprint. I was t
 To start, I created a new application within the Django framework. I created base and home templates and then added function to the views in order for a homepage with a navbar to render. I then registered my URL's and linked my application to the main project home page.
 
 ### Creating the Model and Form
-I created an object model class with a manager anmd defined it's attributes. 
+I created an object model class with a manager and defined it's attributes. 
 
     class destination(models.Model):
         TripName = models.CharField(max_length=30, default="", blank=False, null=False)
@@ -20,7 +20,7 @@ I created an object model class with a manager anmd defined it's attributes.
         # assigns a manager
         destination = models.Manager()
 
-I then created a model form that will include any inputs the user needs to make.
+I then created a model form that includes any inputs the user needs to make.
 
     from django.forms import ModelForm
     from .models import destination
