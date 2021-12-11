@@ -41,7 +41,7 @@ Additionally, I used the following views function to render the create page and 
     content = {'form': form}
     return render(request, 'TravelDestinations/TravelDestinations_add.html', content)
     
-The following function pulls all current database records but only displays the trip name to the HTML template
+The following function pulls all current database records but only displays the trip name to the HTML template.
 
     def destinations(request):
     trips = destination.destination.all()
