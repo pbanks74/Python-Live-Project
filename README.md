@@ -7,6 +7,19 @@ After completing the Python course, I participated in a two week sprint. I was t
 ### Creating the Basic App
 To start, I created a new application within the Django framework. I created base and home templates and then added function to the views in order for a homepage with a navbar to render. I then registered my URL's and linked my application to the main project home page.
 
+### Creating the Model and Form
+I created a model with an objects manager.
+
+class destination(models.Model):
+    TripName = models.CharField(max_length=30, default="", blank=False, null=False)
+    City = models.CharField(max_length=20, default="", blank=False, null=False)
+    State = models.CharField(max_length=20, choices=StateChoices, blank=True)
+    Country = models.CharField(max_length=20, default="", blank=True, null=False)
+    Notes = models.TextField(max_length=300, default="Notes", blank=True)
+
+    # assigns a manager
+    destination = models.Manager()
+    
 ## C# Live Project using .NET Framework
 
 
