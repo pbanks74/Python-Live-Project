@@ -130,7 +130,7 @@ I created a new API template and rendered it with a function. I then researched 
         return render(request, 'TravelDestinations/TravelDestinations_weather.html', content)
     '''
     
-###Conclusion
+### Conclusion
 The Python live project provided me with my first opportunity to utilize project methodologies and gain a detailed understanding of version control. I worked with other students within an Agile framework environment on the Microsoft Azure DevOps platform. I was able to make commits, merges and push/pulls in real time while being aware of how to minimize merge conflicts. I participated in daily standup meetings to discuss progress and roadblocks as well as a retrospective meeting upon completion. I look forward to utilizing everything learned from this sprint in future projects.
 
 
