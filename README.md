@@ -103,6 +103,34 @@ I created the following function that displays all of the details of a specific 
         delete = {'data': data}
         return render(request, 'TravelDestinations/TravelDestinations_delete.html', delete)
     
+###Connect to API
+I created a new API template and rendered it with a function. I then researched API documentation in order to connect the API and write a basic JSON response that displays temperature in Fahreheit for a specific destination.
+
+    def destination_weather(request):
+    api = 'https://api.openweathermap.org/data/2.5/weather?q='
+    city = 'Portland'
+    apiKey = '&appid=080528254af16dbd0c82d7c43b425e9f'
+    units = '&units=imperial'
+    url = api + city + apiKey + units
+    response = requests.get(url)
+    weather = response.json()
+    content = {'weather': weather}
+    return render(request, 'TravelDestinations/TravelDestinations_weather.html', content)
+
+
+    # basic function to get API response. 'units=imperial' displays results in Fahrenheit for portland
+    '''
+    def destination_weather(request):
+        response = requests.get('https://api.openweathermap.org/data/2.5/weather?q=portland&units=imperial&appid=080528254af16dbd0c82d7c43b425e9f')
+        print(response.status_code)
+        print(response.json())
+        weather = response.json()
+        content = {'weather': weather}
+        return render(request, 'TravelDestinations/TravelDestinations_weather.html', content)
+    '''
+    
+###Conclusion
+The Python live project provided me with my first opportunity to utilize project methodologies and gain a detailed understanding of version control. I worked with other students within an Agile framework environment on the Microsoft Azure DevOps platform. I was able to make commits, merges and push/pulls in real time while being aware of how to minimize merge conflicts. I participated in daily standup meetings to discuss progress and roadblocks as well as a retrospective meeting upon completion. I look forward to utilizing everything learned from this sprint in future projects.
 
 
    
