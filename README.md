@@ -104,7 +104,7 @@ I created the following function that displays all of the details of a specific 
         return render(request, 'TravelDestinations/TravelDestinations_delete.html', delete)
 
 
-###Connect to API
+### Connect to API
 I created a new API template and rendered it with a function. I then researched API documentation in order to connect the API and write a basic JSON response that displays temperature in Fahreheit for a specific destination.
 
     def destination_weather(request):
